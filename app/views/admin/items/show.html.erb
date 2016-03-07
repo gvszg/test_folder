@@ -4,8 +4,13 @@
     <div class="item-price">
       <p>NT<%= number_to_currency(@item.price) %></p>
     </div>
-    <div class="default-item-photo">
-      <%= image_tag(@item.image) if @item.image %> 
-    </div>
+    <!-- <div class="default-item-photo">
+      <%= image_tag(@item.photos.first.image.medium.url) if @item.photos.first.present? %>
+    </div> -->
+    <% @item.photos.each do |photo| %>
+      <div class="item-photos-list">
+        <%= image_tag(photo.image.medium.url) if photo.present? %>
+      </div>
+    <% end %>
   </div>
 </div>

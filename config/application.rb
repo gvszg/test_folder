@@ -8,6 +8,9 @@ Bundler.require(*Rails.groups)
 
 module Monmonhouse
   class Application < Rails::Application
+    # 修正無法在 rails console 讀取到 uploader.rb 的問題
+    config.autoload_paths += %W(#{config.root}/app/uploaders)
+    
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
