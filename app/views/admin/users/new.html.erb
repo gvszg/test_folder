@@ -1,0 +1,11 @@
+<h2>新增用戶</h2>
+<%= form_for [:admin, @user] do |f| %>
+  用戶名：<%= f.text_field :user_name %><br>
+  真實姓名：<%= f.text_field :real_name %><br>
+  性別：<%= f.text_field :gender %><br>
+  聯絡地址：<%= f.text_field :address %><br>
+  聯絡電話：<%= f.text_field :phone %><br>
+  臉書ID：<%= f.text_field :uid %><br>
+  上傳圖片：<%= f.file_field :photos, multiple: true %><br>
+  <%= f.submit "確認送出" %>
+<% end %>

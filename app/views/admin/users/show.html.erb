@@ -1,0 +1,6 @@
+<h2>用戶資料</h2>
+<div> 
+  <% @user.photos.each do |photo| %>
+    <%= image_tag(photo.medium.url) %>
+  <% end %>
+</div>

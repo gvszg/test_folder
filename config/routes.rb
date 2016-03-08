@@ -3,7 +3,7 @@ Rails.application.routes.draw do
     root "items#index"
     resources :items
     resources :categories, only: [:new, :create, :show, :index]
-    resources :users, only: [:index, :show, :import_user] do
+    resources :users do
       collection do
         # API for sending POST request
         post "import_user"
